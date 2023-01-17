@@ -3,7 +3,29 @@ using namespace std;
 
 template <typename T>
 void insertionSort(T d[],int N){
+	int max = d[0] , loc , x;
+	for (int index = 1; index <= N-1; index++)
+	{
+		if (d[index]>max)
+		{
+			max = d[index];
+			loc = index ;
+		}
+		cout << "Pass " << index << ":" << max << " " ;
 
+		for (int run = 0; run < N; run++)
+		{
+			if (run == loc)
+			{
+				continue;
+			}
+			cout << d[run] << " ";
+		}
+		
+		/เหลือการสลับ
+
+		cout << endl ;
+	}
 }
 
 int main(){
