@@ -3,28 +3,22 @@ using namespace std;
 
 template <typename T>
 void insertionSort(T d[],int N){
-	int max = d[0] , loc , x;
-	for (int index = 1; index <= N-1; index++)
+	for (int position = 1 ; position < N ; position++)
 	{
-		if (d[index]>max)
+		cout << "Pass " << position << ":";
+		int F = position-1;
+		T box = d[position];
+		while (d[F] < box && F >= 0)
 		{
-			max = d[index];
-			loc = index ;
+			d[F+1] = d[F];
+			F--;
 		}
-		cout << "Pass " << index << ":" << max << " " ;
-
-		for (int run = 0; run < N; run++)
-		{
-			if (run == loc)
-			{
-				continue;
-			}
-			cout << d[run] << " ";
+		d[F+1] = box;
+		for(int j=0;j < N;j++){  
+			cout << d[j] ; 
+			if(j!=N-1) cout << " "; 
 		}
-		
-		/เหลือการสลับ
-
-		cout << endl ;
+		cout << endl;
 	}
 }
 
